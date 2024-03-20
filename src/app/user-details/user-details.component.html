@@ -1,0 +1,88 @@
+<hr>
+<form (ngSubmit)="updateUser()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <h4 class="mb-3">Email: {{user?.email}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>User Name: {{user?.userName}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="userName" [(ngModel)]="userName" id="cc-name" placeholder="new userName" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>First name: {{user?.name?.firstName}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" id="cc-name" placeholder="new first name" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Last name: {{user?.name?.lastName}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" id="cc-name" placeholder="new first name" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Street: {{user?.address?.street}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="street" [(ngModel)]="street" id="cc-name" placeholder="new street" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Apt Number: {{user?.address?.number}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="number" [(ngModel)]="number" id="cc-name" placeholder="new apt number" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>City: {{user?.address?.city}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="city" [(ngModel)]="city" id="cc-name" placeholder="new city" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Zip Code: {{user?.address?.zipCode}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="zipCode" [(ngModel)]="zipCode" id="cc-name" placeholder="new zip code" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Phone #: {{user?.phone}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="phone" [(ngModel)]="phone" id="cc-name" placeholder="new phone" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Admin: {{user?.admin}}</p>
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="admin" [(ngModel)]="admin" id="cc-name" placeholder="true/false" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+        </div>
+        <div *ngIf="!(adminId == user?.id)" class="col-md-6 mb-3">
+            <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Update User</button>
+            <button type="button" (click)="onDelete(user?.id)" style="margin-right: 5px;" class="btn btn-primary">Delete User</button>
+        </div>
+    </div>
+</form>

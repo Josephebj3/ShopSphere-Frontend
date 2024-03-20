@@ -1,0 +1,124 @@
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <a (click)="changeCategory('Users')">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Users</h5>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a (click)="changeCategory('Products')">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Products</h5>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a (click)="changeCategory('Discounts')">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Discounts</h5>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+<br>
+  <h1>{{usersOrProducts}}</h1>
+<div class="row row-cols-1 row-cols-md-1 g-4" style="max-width: 90%;" *ngIf="areUsersVisible"> 
+    <app-user-details 
+    *ngFor="let data of user; let i = index"
+    [user]="data"
+    />
+</div>
+
+<div class="row row-cols-1 row-cols-md-1 g-4" style="max-width: 90%;" *ngIf="areProductsVisible && product">
+
+  <hr>
+  <h5>Add new product</h5>
+  <form (ngSubmit)="addProduct()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" id="cc-name" placeholder="new product name" required="">
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="col">
+            <input type="text" class="form-control" name="image" [(ngModel)]="image" id="cc-name" placeholder="new image" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="description" [(ngModel)]="description" id="cc-name" placeholder="new desrciption" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="category" [(ngModel)]="category" id="cc-name" placeholder="new category" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <input type="number" class="form-control" name="price" [(ngModel)]="price" id="cc-name" placeholder="new price" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+        </div>
+        <div class="col-md-6 mb-3">
+            <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Add Product</button>
+        </div>
+    </div>
+  </form>
+</div>
+
+<div class="row row-cols-1 row-cols-md-1 g-4" style="max-width: 90%;" *ngIf="areProductsVisible"> 
+    <app-product-admin-details 
+    *ngFor="let data of product; let i = index"
+    [product]="data"
+    />
+</div>
+
+
+
+<div class="row row-cols-1 row-cols-md-1 g-4" style="max-width: 90%;" *ngIf="areDiscountsVisible && discount">
+
+  <hr>
+  <h5>Add new discount</h5>
+  <form (ngSubmit)="addDiscount()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="discountName" [(ngModel)]="discountName" id="cc-name" placeholder="new discount name" required="">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <input type="number" class="form-control" name="percentDiscount" [(ngModel)]="percentDiscount" id="cc-name" placeholder="new percent discount" required="">
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+          <input type="text" class="form-control" name="discountCode" [(ngModel)]="discountCode" id="cc-name" placeholder="new discount code" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3"></div>
+        <div class="col-md-6 mb-3">
+          <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Add Discount</button>
+        </div>
+    </div>
+  </form>
+</div>
+
+<div class="row row-cols-1 row-cols-md-1 g-4" style="max-width: 90%;" *ngIf="areDiscountsVisible"> 
+  <app-discount-details 
+  *ngFor="let data of discount; let i = index"
+  [discount]="data"
+  />
+</div>
+

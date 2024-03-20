@@ -1,0 +1,16 @@
+
+<div class="col">
+    <div class="card">
+      <img class="card-img" [src]="cartProduct?.image" [alt]="cartProduct?.name" />
+      <div class="card-body">
+        <h4 class="card-title">{{ cartProduct?.name }}</h4>
+        <p class="card-text">{{ cartProduct?.description }}</p>
+        <div class="buy d-flex justify-content-between align-items-center">
+          <div class="price text-success">
+            <h5 class="mt-4">${{ cartProduct?.price }}</h5>
+          </div>
+          <button type="button" (click)="removeFromCart(cartProduct?.productId)" style="margin-right: 5px;" class="btn btn-primary">remove</button>
+        </div>
+      </div>
+    </div>
+  </div>

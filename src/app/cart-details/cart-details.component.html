@@ -1,0 +1,35 @@
+
+<div class="col">
+  <div class="card">
+    <img class="card-img" [src]="cartProduct?.image" [alt]="cartProduct?.name" />
+    <div class="card-body">
+      <h4 class="card-title">{{ cartProduct?.name }}</h4>
+      <p class="card-text">{{ cartProduct?.description }}</p>
+      <div class="buy d-flex justify-content-between align-items-center">
+        <div class="price text-success">
+          <h5 class="mt-4">${{ cartProduct?.price }}</h5>
+        </div>
+        <div>
+          <h5 class="mt-4">quantity {{ cartProduct?.quantity }}</h5>
+        </div>
+      </div>
+      <form (ngSubmit)="addToCart(cartProduct?.productId)">
+        <div class="buy d-flex justify-content-between align-items-center">
+          <div>
+            <input type="number" id="amountToAdd" name="amountToAdd" [(ngModel)]="amountToAdd" placeholder="quantity to add to cart" required>
+          </div>
+          <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </form>
+      <br>
+      <form (ngSubmit)="deleteFromCart(cartProduct?.productId)">
+        <div class="buy d-flex justify-content-between align-items-center">
+          <div>
+            <input type="number" id="amountToDelete" name="amountToDelete" [(ngModel)]="amountToDelete" placeholder="quantity" required>
+          </div>
+          <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Remove</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

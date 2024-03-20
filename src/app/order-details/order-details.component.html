@@ -1,0 +1,26 @@
+
+<div class="col">
+    <div class="card">
+      <img class="card-img" [src]="order?.image" [alt]="order?.name" />  
+      <div class="card-body">
+        <h5 class="card-title">Order ID: {{ order?.orderId }}</h5>
+        <h4 class="card-title">{{ order?.name }}</h4>
+        <div class="buy d-flex justify-content-between align-items-center">
+          <div class="price text-success">
+            <h5 class="mt-4">${{ order?.price }}</h5>
+          </div>
+          <div>
+            <h5 class="mt-4">quantity: {{ order?.quantity }}</h5>
+          </div>
+        </div>
+        <form (ngSubmit)="addToCart(order?.productId)">
+          <div class="buy d-flex justify-content-between align-items-center">
+            <div>
+              <input type="number" id="amountToAdd" name="amountToAdd" [(ngModel)]="amountToAdd" placeholder="quantity to add to cart" required>
+            </div>
+            <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Add to Cart</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

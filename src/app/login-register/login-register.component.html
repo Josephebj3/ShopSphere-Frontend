@@ -1,0 +1,42 @@
+<br><br><br><br>
+
+<div>
+    <div class="container">
+        <div class="card">
+          <h2>Login</h2>
+          <form (ngSubmit)="onLogin()">
+            <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <br>
+            <button type="button" (click)="onClick()">Register Here</button>
+            <br>
+            <button type="button" (click)="onLogout()">Logout</button>
+          </form>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div *ngIf="isFormVisible">
+    <div class="container">
+        <div class="card">
+          <h2>Register</h2>
+          <form (ngSubmit)="onRegister()">
+            <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email" required>
+            <input type="text" id="userName" name="userName" [(ngModel)]="userName" placeholder="User Name" required>
+            <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Password" required>
+            <input type="text" id="FirstName" name="FirstName" [(ngModel)]="firstName" placeholder="FirstName" required>
+            <input type="text" id="LastName" name="LastName" [(ngModel)]="lastName" placeholder="LastName" required>
+            <input type="text" id="city" name="city" [(ngModel)]="city" placeholder="City" required>
+            <input type="text" id="streetName" name="streetName" [(ngModel)]="street" placeholder="Street Name" required>
+            <input type="text" id="houseNumber" name="houseNumber" [(ngModel)]="number" placeholder="House Number" required>
+            <input type="text" id="zipCode" name="zipCode" [(ngModel)]="zipCode" placeholder="Zip Code" required>
+            <input type="text" id="phone" name="phone" [(ngModel)]="phone" placeholder="Phone Number" required>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+    </div>
+</div>
+<br>

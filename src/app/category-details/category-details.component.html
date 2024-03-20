@@ -1,0 +1,21 @@
+<div class="col">
+    <div class="card">
+      <img [src]="product?.image" height="250px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ product?.name }}</h5>
+        <p class="card-text">{{ product?.description }}</p>
+        <div class="buy d-flex justify-content-between align-items-center">
+          <div class="price text-success">
+            <h5 class="mt-4">${{ product?.price }}</h5>
+          </div>
+          <button type="button" (click)="addToCart(product?.id)" style="margin-right: 5px;" class="btn btn-primary">Add to Cart</button>
+        </div>
+        <div class="buy d-flex justify-content-between align-items-center">
+          <div class="price text-success">
+            <h5 class="mt-4"></h5>
+          </div>
+          <button type="button" (click)="addToWishlist(product?.id)" style="margin-right: 5px;" class="btn btn-primary">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+</div> 

@@ -1,0 +1,38 @@
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <a (click)="showAll('Show All')">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Show All</h5>
+          </div>
+        </div>
+      </div>
+    </a>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <form (ngSubmit)="getByOrderId()">
+                    <div class="buy d-flex justify-content-between align-items-center">
+                      <div>
+                        <input type="number" id="orderId" name="orderId" [(ngModel)]="orderId" placeholder="Order Id" required>
+                      </div>
+                      <button type="submit" style="margin-right: 5px;" class="btn btn-primary">get by orderId</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>{{showAllOrByOrderId}}</h1>
+
+<div>
+    <div class="row row-cols-1 row-cols-md-4 g-4"> 
+        <app-order-details 
+        *ngFor="let order of data; let i = index"
+        [order]="order"
+        ></app-order-details>
+    </div>
+</div>
+<br>
+

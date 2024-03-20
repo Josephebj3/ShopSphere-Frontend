@@ -1,0 +1,52 @@
+<hr>
+<form (ngSubmit)="updateProduct()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <h4 class="mb-3">{{product?.name}}</h4>
+        </div>
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" id="cc-name" placeholder="new product name" required="">
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <img [src]="product?.image" height="250px" width="200px" class="card-img-top" alt="...">
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <input type="text" class="form-control" name="image" [(ngModel)]="image" id="cc-name" placeholder="new image" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Description: {{product?.description}}</p>
+        </div>
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="description" [(ngModel)]="description" id="cc-name" placeholder="new desrciption" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Category: {{product?.category}}</p>
+        </div>
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" name="category" [(ngModel)]="category" id="cc-name" placeholder="new category" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <p>Price: ${{product?.price}}</p>
+        </div>
+        <div class="col-md-6 mb-3">
+            <input type="number" class="form-control" name="price" [(ngModel)]="price" id="cc-name" placeholder="new price" required="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+        </div>
+        <div class="col-md-6 mb-3">
+            <button type="submit" style="margin-right: 5px;" class="btn btn-primary">Update Product</button>
+            <button type="button" (click)="onDeleteProduct(product?.id)" style="margin-right: 5px;" class="btn btn-primary">Delete Product</button>
+        </div>
+    </div>
+</form>

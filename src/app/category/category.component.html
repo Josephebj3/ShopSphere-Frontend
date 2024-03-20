@@ -1,0 +1,46 @@
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <a (click)="changeCategory('Produce')">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Produce</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a (click)="changeCategory('Electronics')">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Electronics</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a (click)="changeCategory('Furniture')">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Furniture</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+  <a (click)="changeCategory('Clothing')">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Clothing</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<h1>{{category}}</h1>
+<div class="row row-cols-1 row-cols-md-4 g-4"> 
+  <app-category-details 
+  *ngFor="let data of product; let i = index"
+  [product]="data"/>
+</div>
+<br>

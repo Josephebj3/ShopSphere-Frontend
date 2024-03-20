@@ -1,0 +1,6 @@
+<div class="row row-cols-1 row-cols-md-4 g-4"> 
+    <app-wishlist-details 
+    *ngFor="let cartProduct of data; let i = index"
+    [cartProduct]="cartProduct"
+    ></app-wishlist-details>
+</div>
